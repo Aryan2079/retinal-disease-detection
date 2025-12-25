@@ -22,6 +22,11 @@ transform: scale(1.01);
 transition: 0.3s;
 }
 
+.detected {
+box-shadow: 0 0 25px rgba(0,179,179,0.6);
+}
+
+
 .main-btn {
 background:#00b3b3;
 color:white;
