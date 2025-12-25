@@ -26,7 +26,6 @@ transition: 0.3s;
 box-shadow: 0 0 25px rgba(0,179,179,0.6);
 }
 
-
 .main-btn {
 background:#00b3b3;
 color:white;
@@ -34,6 +33,12 @@ padding:15px;
 border-radius:14px;
 font-size:20px;
 width:100%;
+}
+
+.main-btn:hover {
+background:#009999;
+transform: scale(1.02);
+transition:0.3s;
 }
 
 .result-card {
