@@ -1,7 +1,7 @@
 import streamlit as st
 import time
 
-st.set_page_config(page_title="RetinaCheck \u2764", layout="centered")
+st.set_page_config(page_title="RetinaCheck", layout="centered")
 
 st.markdown("""
 <style>
@@ -51,8 +51,8 @@ color:#00b3b3;
 </style>
 """, unsafe_allow_html=True)
 
-st.markdown("<div class='header'>RetinaCheck AI</div>", unsafe_allow_html=True)
-st.markdown("<div class='sub'>Check you eye with retinal disease detection </div>", unsafe_allow_html=True)
+st.markdown("<div class='header'>RetinaCheck \U0001F441</div>", unsafe_allow_html=True)
+st.markdown("<div class='sub'>Check you eye with retinal disease detection. </div>", unsafe_allow_html=True)
 
 uploaded = st.file_uploader("")
 
