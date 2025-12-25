@@ -1,5 +1,4 @@
 # Editable install with no version control (agentic-memory==0.0.1)
--e c:\users\gauta\downloads\a-mem-main\a-mem-main
 aiohappyeyeballs==2.6.1
 aiohttp==3.13.2
 aiosignal==1.4.0
