@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>EXP-001</title>
+  <style>
+    body { font-family: Arial; margin: 40px; }
+    h2 { border-bottom: 2px solid #333; }
+    table { border-collapse: collapse; width: 60%; }
+    td, th { border: 1px solid #aaa; padding: 8px; }
+  </style>
+</head>
+<body>
+
+<h1>Experiment EXP-001</h1>
+
+<h2>Model</h2>
+<p><b>Architecture:</b> MobileNetV2</p>
+<p><b>Type:</b> CNN</p>
+<p><b>Date:</b> 2025-12-24</p>
+
+<h2>Constraints</h2>
+<table>
+
+<tr><td>hardware</td><td>CPU</td></tr>
+
+<tr><td>image_size</td><td>224x224</td></tr>
+
+<tr><td>epochs</td><td>20</td></tr>
+
+<tr><td>batch_size</td><td>32</td></tr>
+
+<tr><td>time_limit_hours</td><td>2</td></tr>
+
+</table>
+
+<h2>Training Configuration</h2>
+<table>
+
+<tr><td>optimizer</td><td>Adam</td></tr>
+
+<tr><td>learning_rate</td><td>0.0001</td></tr>
+
+<tr><td>loss</td><td>Categorical Cross-Entropy</td></tr>
+
+<tr><td>augmentation</td><td>['Flip', 'Rotation']</td></tr>
+
+</table>
+
+<h2>Results</h2>
+<table>
+
+<tr><td>train_accuracy</td><td>0.91</td></tr>
+
+<tr><td>val_accuracy</td><td>0.845</td></tr>
+
+<tr><td>test_accuracy</td><td>0.839</td></tr>
+
+<tr><td>f1_score</td><td>0.82</td></tr>
+
+<tr><td>training_time_minutes</td><td>108</td></tr>
+
+</table>
+
+<h2>Observations</h2>
+<p><b>Strengths:</b> ['Fast training', 'Low memory usage']</p>
+<p><b>Limitations:</b> ['Weak AMD vs Glaucoma separation']</p>
+
+<h2>Decision</h2>
+<p>Try EfficientNet for better feature extraction</p>
+
+</body>
+</html>
