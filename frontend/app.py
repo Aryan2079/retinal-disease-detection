@@ -15,6 +15,12 @@ border-radius:18px;
 padding:35px;
 text-align:center;
 }
+            
+.upload-box:hover {
+box-shadow: 0 0 18px rgba(0,179,179,0.4);
+transform: scale(1.01);
+transition: 0.3s;
+}
 
 .main-btn {
 background:#00b3b3;
