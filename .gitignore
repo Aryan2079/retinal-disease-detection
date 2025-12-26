@@ -32,10 +32,11 @@ dist/
 .ipynb_checkpoints/
 
 # Datasets (never commit raw data)
-data/
+# data/
 datasets/
 raw_data/
 processed_data/
+splits/
 
 # Model artifacts
 models/

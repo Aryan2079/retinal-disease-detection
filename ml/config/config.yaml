@@ -1,0 +1,23 @@
+data:
+  raw_dir: raw
+  processed_dir: processed
+  img_size: 224
+  num_classes: 5
+
+
+training:
+  batch_size: 16
+  epochs: 30
+  learning_rate: 0.0001
+  optimizer: adam
+
+
+model:
+  backbone: resnet50
+  pretrained: true
+  checkpoint_name: retinal_resnet50.pt
+
+inference:
+  threshold: 0.5
+
+

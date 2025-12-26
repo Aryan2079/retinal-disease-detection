@@ -1,0 +1,84 @@
+# ===============================================
+# This file lists all the datasets used in my project.
+# Each dataset has a name, link, and a brief description.
+# ===============================================
+
+datasets:
+  - name: "Retinal_Disease_Classification"
+    alias: "RDC"
+    link: "https://www.kaggle.com/datasets/andrewmvd/retinal-disease-classification/data"
+    description: "contains the images for 46 diseases. Only fundus images. contains 3203 images total spread across train, test, and validation. also has 3 csv across train, test and val that labels the images."
+    cleaning: "run the clean_retinal_diseases_classification_dataset.py in scripts"
+    copy: "run the copy_retinal_diseases_classification_dataset.py in scripts"
+
+  - name: "Eye_Disease_Classification"
+    alias: "EDC"
+    link: "https://www.kaggle.com/datasets/gunavenkatdoddi/eye-diseases-classification"
+    description: "consists of Normal, Diabetic Retinopathy, Cataract and Glaucoma retinal images where each class have approximately 1000 images. doesnt have a csv. images are labeled by folder.fundus images only."
+    cleaning: "just delete the cataract file."
+    copy: "just run the copy_eye_disease_classification.py from scripts"
+
+  - name: "EyePacs_DR"
+    alias: "EDR"
+    link: "https://www.kaggle.com/datasets/ascanipek/eyepacs-aptos-messidor-diabetic-retinopathy/data"
+    description: "This data set, consisting of a total of 92,501 jpg files. the label makes no sense. not using this for now."
+    cleaning: "dont touch this for now"
+
+  - name: "Fundus_DR"
+    alias: "FDR"
+    link: "https://www.kaggle.com/datasets/sehastrajits/fundus-aptosddridirdeyepacsmessidor"
+    description: "contains only fundus images for dr. this contains 5 classes of no_dr, mild_dr, moderate_dr, sever_dr, proliferative_dr. about 45.3k files."
+    cleaning: "do not touch"
+    copy: "just run the copy_fundus_dr.py script"
+
+  - name: "Standarized_Glaucoma_Dataset"
+    alias: "SGD"
+    link: "https://www.kaggle.com/datasets/deathtrooper/multichannel-glaucoma-benchmark-dataset"
+    description: "contains all types of photos like blood vessels, optic_cup,etc. has only fundus images. about 12k files with a csv to classify"
+    cleaning: "just keep the full-fundus"
+    copy: "just run the copy_standarized_glaucoma_dataset"
+
+  - name: "Glaucoma_Fundus_Imaging_Dataset"
+    alias: "GID"
+    link: "https://www.kaggle.com/datasets/arnavjain1/glaucoma-datasets?select=G1020"
+    description: "contains a bunch of images from three sources. only fundus. only glaucoma. has csv files. "
+    cleaning: "just delete all the files other than Images. and only keep the G1020 and ORIGA folders"
+    copy: "run the copy_glaucoma_imaging_fundus_dataset.py from scripts"
+
+  - name: "Macular_Disease_Detection"
+    alias: "MDG"
+    link: "https://www.kaggle.com/datasets/abuhurer/macular-degeneration-disease-armd?select=Macular+Degeneration+Disease+Dataset"
+    description: "The dataset has two directories train and val each containing sub-directories amd and normal."
+    cleaning: ""
+    copy: "just run the copy_macular_disease_detection.py"
+
+  - name: "AMDnet23"
+    alias: "AMDnet23"
+    link: https://www.kaggle.com/datasets/orvile/macular-degeneration-disease-dataset?select=AMDNet23+Fundus+Image+Dataset+for+Age-Related+Macular+Degeneration+Disease+Detection"
+    description: " It includes 4 balanced classes with 400 images each: Normal, Diabetes, Cataract, and Age-related Macular Degeneration (AMD). contains a csv"
+    cleaning: "delete cataract and diabetes classes from train and valid"
+    copy: "just run the copy_amdnet23.py from scripts"
+
+  - name: "Ocular_Disease_Detection"
+    alias: "ODD"
+    link: "https://www.kaggle.com/datasets/manoj989/ocular-disease-fundus-images-dataset"
+    description: "fundus images designed for the classification of Six common ocular diseases and Normal fundus. has a csv"
+    cleaning: "run the clean_ocular_disease_detection.py script"
+    copy: " "
+
+  - name: "Retinal_Fundus_Image_50k"
+    alias: "RFI50"
+    link: "https://www.kaggle.com/datasets/gautamrajiitk/retinal-fundus-image-50k"
+    description: "Retinal Fundus Image Dataset of 50k images with 7 classes. This dataset contains approximately 50,000 high-resolution retinal fundus images, organized for multi-class classification tasks."
+    cleaning: "remove all classes folders except for amd, dr, glaucoma and normal"
+    copy: "just run the clean_retinal_fundus_image_50k.py"
+
+  - name: "Ocular_Dataset"
+    alias: "OD"
+    link: "https://www.kaggle.com/datasets/manan1717/ocular-disease-dataset"
+    description: "Six common ocular diseases and Normal fundus. arranged in folder structure."
+    cleaning: "run the clean_move_OD.py from scripts."
+    copy: "just run the clean_ocular_disease.py from scripts"
+
+
+
