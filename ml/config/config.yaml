@@ -1,16 +1,15 @@
 data:
-  raw_dir: raw
-  processed_dir: processed
+  raw_dir: raw_data
+  processed_dir: processed_data
+  splits_dir: splits
   img_size: 224
   num_classes: 5
-
 
 training:
   batch_size: 16
   epochs: 30
   learning_rate: 0.0001
   optimizer: adam
-
 
 model:
   backbone: resnet50

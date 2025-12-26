@@ -5,6 +5,7 @@
 import shutil
 import os
 from move_images_and_rename import move_images_and_rename
+from src.utils.paths import DR_PROCESSED_PATH, NORMAL_PROCESSED_PATH, GLAUCOMA_PROCESSED_PATH, EDC_RAW_DATA_PATH
 
 def clean_EDC(directory_to_delete):
     if os.path.exists(directory_to_delete):
@@ -19,14 +20,20 @@ def clean_EDC(directory_to_delete):
 
 
 # cleaning EDC dataset
-clean_EDC(r"C:\Users\aryan\Projects\Major\raw\Eye_Disease_Classification\Dataset\cataract")
+clean_EDC(EDC_RAW_DATA_PATH / "cataract")
 
 
 # for dr
-move_images_and_rename(r"C:\Users\aryan\Projects\Major\raw\Eye_Disease_Classification\Dataset\diabetic_retinopathy", r"C:\Users\aryan\Projects\Major\data\images\DR","EDC")
+move_images_and_rename(EDC_RAW_DATA_PATH / "diabetic_retinopathy",
+                       DR_PROCESSED_PATH,
+                       "EDC")
 
 # for normal
-move_images_and_rename(r"C:\Users\aryan\Projects\Major\raw\Eye_Disease_Classification\Dataset\normal", r"C:\Users\aryan\Projects\Major\data\images\Normal","EDC")
+move_images_and_rename(EDC_RAW_DATA_PATH / "normal",
+                       NORMAL_PROCESSED_PATH,
+                       "EDC")
 
 #for glaucoma
-move_images_and_rename(r"C:\Users\aryan\Projects\Major\raw\Eye_Disease_Classification\Dataset\glaucoma", r"C:\Users\aryan\Projects\Major\data\images\Glaucoma","EDC")
+move_images_and_rename(EDC_RAW_DATA_PATH / "glaucoma",
+                       GLAUCOMA_PROCESSED_PATH,
+                        "EDC")

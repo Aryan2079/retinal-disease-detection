@@ -1,11 +1,13 @@
-from move_images_and_rename import move_images_and_rename
-import os
-import shutil
 
 # =======================================================================================================
 # Note: we havent used the data for DR from this dataset so as to not increase the data imbalance even more
 # this script just selects the required labels and moves them in the /data folder
 # =======================================================================================================
+
+from move_images_and_rename import move_images_and_rename
+import os
+import shutil
+from src.utils.paths import RFI50_RAW_DATA_PATH, AMD_PROCESSED_PATH, GLAUCOMA_PROCESSED_PATH, NORMAL_PROCESSED_PATH
 
 do_not_delete_list = ["AMD", "Glaucoma", "Normal_Fundus"]
 
@@ -29,11 +31,11 @@ def clean_RF150(directory_to_clean):
 # cleaning
 
 # for test
-clean_RF150(r"C:\Users\aryan\Projects\Major\raw\Retinal_Fundus_Image_50k\Retinal Fundus Images\test")
+clean_RF150(RFI50_RAW_DATA_PATH / "test")
 # for train
-clean_RF150(r"C:\Users\aryan\Projects\Major\raw\Retinal_Fundus_Image_50k\Retinal Fundus Images\train")
+clean_RF150(RFI50_RAW_DATA_PATH / "train")
 # for val
-clean_RF150(r"C:\Users\aryan\Projects\Major\raw\Retinal_Fundus_Image_50k\Retinal Fundus Images\val")
+clean_RF150(RFI50_RAW_DATA_PATH / "val")
 
 # moving
 splits = ["train", "val", "test"]
@@ -41,22 +43,22 @@ splits = ["train", "val", "test"]
 for split in splits:
     # for amd
     move_images_and_rename(
-        os.path.join(r"C:\Users\aryan\Projects\Major\raw\Retinal_Fundus_Image_50k\Retinal Fundus Images", split, "AMD"),
-        r"C:\Users\aryan\Projects\Major\data\images\AMD",
+        RFI50_RAW_DATA_PATH / split / "AMD",
+        AMD_PROCESSED_PATH,
         "RFI50"
     )
 
     # for glaucoma
     move_images_and_rename(
-        os.path.join(r"C:\Users\aryan\Projects\Major\raw\Retinal_Fundus_Image_50k\Retinal Fundus Images", split, "Glaucoma"),
-        r"C:\Users\aryan\Projects\Major\data\images\Glaucoma",
+        RFI50_RAW_DATA_PATH / split / "Glaucoma",
+        GLAUCOMA_PROCESSED_PATH,
         "RFI50"
     )
 
     # for normal
     move_images_and_rename(
-        os.path.join(r"C:\Users\aryan\Projects\Major\raw\Retinal_Fundus_Image_50k\Retinal Fundus Images", split, "Normal_Fundus"),
-        r"C:\Users\aryan\Projects\Major\data\images\Normal",
+        RFI50_RAW_DATA_PATH / split / "Normal_Fundus",
+        NORMAL_PROCESSED_PATH,
         "RFI50"
     )
 

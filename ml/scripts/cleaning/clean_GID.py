@@ -5,6 +5,7 @@
 import pandas as pd
 import os
 import shutil
+from src.utils.paths import GID_RAW_DATA_PATH, PROCESSED_DATA_PATH
 
 def clean_GID(directory_to_clean):
     dir_list = os.listdir(directory_to_clean)
@@ -88,27 +89,27 @@ def move_and_rename_csv_origa(image_source_path, image_destination_path, csv_pat
 # cleaning
 
 # for g1020
-clean_GID(r"C:\Users\aryan\Projects\Major\raw\Glaucoma_Fundus_Imaging_Dataset\Dataset\G1020") 
+clean_GID(GID_RAW_DATA_PATH / "G1020") 
 
 # for origa
-clean_GID(r"C:\Users\aryan\Projects\Major\raw\Glaucoma_Fundus_Imaging_Dataset\Dataset\ORIGA")
+clean_GID(GID_RAW_DATA_PATH / "ORIGA")
 
 
 # move and rename
 
 # for g1020
 move_and_rename_csv_g1020(
-    r"C:\Users\aryan\Projects\Major\raw\Glaucoma_Fundus_Imaging_Dataset\Dataset\G1020\Images",
-    r"C:\Users\aryan\Projects\Major\data\images",
-    r"C:\Users\aryan\Projects\Major\raw\Glaucoma_Fundus_Imaging_Dataset\Dataset\G1020\G1020.csv",
+    GID_RAW_DATA_PATH / "G1020" / "Images",
+    PROCESSED_DATA_PATH,
+    GID_RAW_DATA_PATH / "G1020" / "G1020.csv",
     "GID"
 )
 
 # for origa
 move_and_rename_csv_origa(
-    r"C:\Users\aryan\Projects\Major\raw\Glaucoma_Fundus_Imaging_Dataset\Dataset\ORIGA\Images",
-    r"C:\Users\aryan\Projects\Major\data\images",
-    r"C:\Users\aryan\Projects\Major\raw\Glaucoma_Fundus_Imaging_Dataset\Dataset\ORIGA\OrigaList.csv",
+    GID_RAW_DATA_PATH / "ORIGA" / "Images",
+    PROCESSED_DATA_PATH,
+    GID_RAW_DATA_PATH / "ORIGA" / "OrigaList.csv",
     "GID"
 )
 

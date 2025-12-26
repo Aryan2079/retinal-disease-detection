@@ -1,7 +1,6 @@
 import yaml
-from pathlib import Path
+from paths import DATA_DIR_PATH, CONFIG_PATH
 
 def load_cfg():
-    config_path = Path("../../config/config.yaml")
-    with open(config_path, "r") as f:
+    with open(CONFIG_PATH, "r") as f:
         return yaml.safe_load(f)

@@ -1,7 +1,7 @@
 from move_images_and_rename import move_images_and_rename
 import os
 import shutil
-
+from src.utils.paths import AMD_PROCESSED_PATH, NORMAL_PROCESSED_PATH, AMDnet23_RAW_DATA_PATH
 
 def clean_AMDnet23(directory_to_clean):
     dir_list = os.listdir(directory_to_clean)
@@ -23,28 +23,38 @@ def clean_AMDnet23(directory_to_clean):
 # cleaning
 
 # for train
-clean_AMDnet23(r"C:\Users\aryan\Projects\Major\raw\AMDnet23\AMDNet23 Fundus Image Dataset for  Age-Related Macular Degeneration Disease Detection\AMDNet23 Dataset\train")
+clean_AMDnet23(AMDnet23_RAW_DATA_PATH / "train")
 
 # for valid
-clean_AMDnet23(r"C:\Users\aryan\Projects\Major\raw\AMDnet23\AMDNet23 Fundus Image Dataset for  Age-Related Macular Degeneration Disease Detection\AMDNet23 Dataset\valid")
+clean_AMDnet23(AMDnet23_RAW_DATA_PATH / "valid")
 
 
 # moving
-splits = ["train", "valid"]
 
-for split in splits:
-    # for amd
-    move_images_and_rename(
-        os.path.join(r"C:\Users\aryan\Projects\Major\raw\AMDnet23\AMDNet23 Fundus Image Dataset for  Age-Related Macular Degeneration Disease Detection\AMDNet23 Dataset", split, "amd"),
-        r"C:\Users\aryan\Projects\Major\data\images\AMD",
-        "AMDnet23"
-    )
+# for train amd
+move_images_and_rename(
+    AMDnet23_RAW_DATA_PATH / "train" / "amd",
+    AMD_PROCESSED_PATH,
+    "AMDnet23"
+)
+# for train normal
+move_images_and_rename(
+    AMDnet23_RAW_DATA_PATH / "train" / "normal",
+    NORMAL_PROCESSED_PATH,
+    "AMDnet23"
+)
 
-    # for normal
-    move_images_and_rename(
-        os.path.join(r"C:\Users\aryan\Projects\Major\raw\AMDnet23\AMDNet23 Fundus Image Dataset for  Age-Related Macular Degeneration Disease Detection\AMDNet23 Dataset", split, "normal"),
-        r"C:\Users\aryan\Projects\Major\data\images\Normal",
-        "AMDnet23"
-    )
+# for valid amd
+move_images_and_rename(
+    AMDnet23_RAW_DATA_PATH / "valid" / "amd",
+    AMD_PROCESSED_PATH,
+    "AMDnet23"
+)
+# for valid normal
+move_images_and_rename(
+    AMDnet23_RAW_DATA_PATH / "valid" / "normal",
+    NORMAL_PROCESSED_PATH,
+    "AMDnet23"
+)
 
 print("AMDnet23 data transfer complete")

@@ -5,6 +5,7 @@
 import os
 import pandas as pd
 import shutil 
+from src.utils.paths import PROCESSED_DATA_PATH, RDC_RAW_DATA_PATH
 
 def clean_RDC(images_path, csv_path):
     print(f"\nCleaning: {images_path}")
@@ -75,32 +76,35 @@ def move_rename_RDC(images_source_path, images_destination_path, csv_path, datas
 
 
 #cleaning test data
-clean_RDC("C:/Users/aryan/Projects/Major/raw/Retinal_Disease_Classification/Dataset/Test_Set/Test_Set/Test","C:/Users/aryan/Projects/Major/raw/Retinal_Disease_Classification/Dataset/Test_Set/Test_Set/RFMiD_Testing_Labels.csv")
+clean_RDC(RDC_RAW_DATA_PATH / "Test_Set" / "Test_Set" / "Test",
+          RDC_RAW_DATA_PATH / "Test_Set" / "Test_Set" / "RFMiD_Testing_Labels_cleaned.csv")
 
 #cleaning evaluation data
-clean_RDC("C:/Users/aryan/Projects/Major/raw/Retinal_Disease_Classification/Dataset/Evaluation_Set/Evaluation_Set/Validation","C:/Users/aryan/Projects/Major/raw/Retinal_Disease_Classification/Dataset/Evaluation_Set/Evaluation_Set/RFMiD_Validation_Labels.csv")
+clean_RDC(RDC_RAW_DATA_PATH / "Evaluation_Set" / "Evaluation_Set" / "Validation",
+          RDC_RAW_DATA_PATH / "Evaluation_Set" / "Evaluation_Set" / "RFMiD_Validation_Labels_cleaned.csv")
 
 #cleaning training data
-clean_RDC("C:/Users/aryan/Projects/Major/raw/Retinal_Disease_Classification/Dataset/Training_Set/Training_Set/Training","C:/Users/aryan/Projects/Major/raw/Retinal_Disease_Classification/Dataset/Training_Set/Training_Set/RFMiD_Training_Labels.csv")
+clean_RDC(RDC_RAW_DATA_PATH / "Training_Set" / "Training_Set" / "Training",
+          RDC_RAW_DATA_PATH / "Training_Set" / "Training_Set" / "RFMiD_Training_Labels_cleaned.csv")
 
 
 #moving evaluation set
 move_rename_RDC(
-    r"C:\Users\aryan\Projects\Major\raw\Retinal_Disease_Classification\Dataset\Evaluation_Set\Evaluation_Set\Validation",
-    r"C:\Users\aryan\Projects\Major\data\images",
-    r"C:\Users\aryan\Projects\Major\raw\Retinal_Disease_Classification\Dataset\Evaluation_Set\Evaluation_Set\RFMiD_Validation_Labels_cleaned.csv",
+    RDC_RAW_DATA_PATH / "Evaluation_Set" / "Evaluation_Set" / "Validation",
+    PROCESSED_DATA_PATH,
+    RDC_RAW_DATA_PATH / "Evaluation_Set" / "Evaluation_Set" / "RFMiD_Validation_Labels_cleaned.csv",
     "RDC")   
      
 #moving test set
 move_rename_RDC(
-    r"C:\Users\aryan\Projects\Major\raw\Retinal_Disease_Classification\Dataset\Test_Set\Test_Set\Test",
-    r"C:\Users\aryan\Projects\Major\data\images",
-    r"C:\Users\aryan\Projects\Major\raw\Retinal_Disease_Classification\Dataset\Test_Set\Test_Set\RFMiD_Testing_Labels_cleaned.csv",
+    RDC_RAW_DATA_PATH / "Test_Set" / "Test_Set" / "Test",
+    PROCESSED_DATA_PATH,
+    RDC_RAW_DATA_PATH / "Test_Set" / "Test_Set" / "RFMiD_Testing_Labels_cleaned.csv",
     "RDC")    
     
 #moving training set
 move_rename_RDC(
-    r"C:\Users\aryan\Projects\Major\raw\Retinal_Disease_Classification\Dataset\Training_Set\Training_Set\Training",
-    r"C:\Users\aryan\Projects\Major\data\images",
-    r"C:\Users\aryan\Projects\Major\raw\Retinal_Disease_Classification\Dataset\Training_Set\Training_Set\RFMiD_Training_Labels_cleaned.csv",
+    RDC_RAW_DATA_PATH / "Training_Set" / "Training_Set" / "Training",
+    PROCESSED_DATA_PATH,
+    RDC_RAW_DATA_PATH / "Training_Set" / "Training_Set" / "RFMiD_Training_Labels_cleaned.csv",
     "RDC")        

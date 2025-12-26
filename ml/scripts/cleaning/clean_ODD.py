@@ -7,6 +7,7 @@
 import os
 import shutil
 import pandas as pd
+from src.utils.paths import ODD_RAW_DATA_PATH, PROCESSED_DATA_PATH
 
 def clean_rename_move_ODD(images_source_path, images_destination_path, csv_path, dataset_name):
 
@@ -56,8 +57,8 @@ def clean_rename_move_ODD(images_source_path, images_destination_path, csv_path,
     print("copy and rename success!")
 
 clean_rename_move_ODD(
-    r"C:\Users\aryan\Projects\Major\raw\Ocular_Disease_Detection\Training_Dataset_Final\Training_Dataset_Final",
-    r"C:\Users\aryan\Projects\Major\data\images",
-    r"C:\Users\aryan\Projects\Major\raw\Ocular_Disease_Detection\Final.csv",
+    ODD_RAW_DATA_PATH / "Training_Dataset_Final" / "Training_Dataset_Final",
+    PROCESSED_DATA_PATH,
+    ODD_RAW_DATA_PATH / "Final.csv",
     "ODD"
 )

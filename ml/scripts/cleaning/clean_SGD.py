@@ -5,6 +5,7 @@
 import os
 import pandas as pd
 import shutil
+from src.utils.paths import SGD_RAW_DATA_PATH, PROCESSED_DATA_PATH
 
 def clean_SGD(directory_to_clean):
     dir_list = os.listdir(directory_to_clean)
@@ -55,11 +56,11 @@ def move_and_rename_csv(image_source_path, image_destination_path, csv_path, dat
     print("move and rename success!!")
 
 #cleaning the dataset
-clean_SGD(r"C:\Users\aryan\Projects\Major\raw\Standarized_Glaucoma_Dataset\Dataset")
+clean_SGD(SGD_RAW_DATA_PATH)
 
 #for full-fundus images
 move_and_rename_csv(
-    r"C:\Users\aryan\Projects\Major\raw\Standarized_Glaucoma_Dataset\Dataset\full-fundus\full-fundus",
-    r"C:\Users\aryan\Projects\Major\data\images",
-    r"C:\Users\aryan\Projects\Major\raw\Standarized_Glaucoma_Dataset\Dataset\metadata - standardized.csv",
+    SGD_RAW_DATA_PATH / "full-fundus" / "full-fundus",
+    PROCESSED_DATA_PATH,
+    SGD_RAW_DATA_PATH / "metadata - standardized.csv",
     "SGD")

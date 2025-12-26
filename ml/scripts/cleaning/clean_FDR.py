@@ -3,17 +3,17 @@
 # =======================================================================================================
 
 from move_images_and_rename import move_images_and_rename
-import os
-
-destination_path_dr = r"C:\Users\aryan\Projects\Major\data\images\DR"
-destination_path_normal = r"C:\Users\aryan\Projects\Major\data\images\Normal"
-source_path = r"C:\Users\aryan\Projects\Major\raw\Fundus_DR\Dataset\split_dataset"
+from src.utils.paths import FDR_RAW_DATA_PATH, NORMAL_PROCESSED_PATH, DR_PROCESSED_PATH
 
 data_splits = ["test","train","val"]
 
 for split in data_splits:
     for i in range(5):
         if i == 0:
-            move_images_and_rename(os.path.join(source_path, split, str(i)), destination_path_normal, "FDR")
+            move_images_and_rename(FDR_RAW_DATA_PATH / split / str(i),
+                                   NORMAL_PROCESSED_PATH,
+                                   "FDR")
 
-        move_images_and_rename(os.path.join(source_path, split, str(i)), destination_path_dr, "FDR")
+        move_images_and_rename(FDR_RAW_DATA_PATH / split / str(i),
+                               DR_PROCESSED_PATH,
+                               "FDR")

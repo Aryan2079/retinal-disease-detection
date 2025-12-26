@@ -6,6 +6,7 @@
 from move_images_and_rename import move_images_and_rename
 import os
 import shutil
+from src.utils.paths import OD_RAW_DATA_PATH, PROCESSED_DATA_PATH
 
 splits = ["A", "G", "N"]
 
@@ -28,7 +29,7 @@ def clean_OD(directory_to_clean):
 
 
 # cleaning
-clean_OD(r"C:\Users\aryan\Projects\Major\raw\Ocular_Dataset\preprocessed")
+clean_OD(OD_RAW_DATA_PATH)
 
 # moving
 for split in splits:
@@ -42,8 +43,8 @@ for split in splits:
         folder_label = "Normal"
 
     move_images_and_rename(
-        os.path.join(r"C:\Users\aryan\Projects\Major\raw\Ocular_Dataset\preprocessed", split),
-        f"C:/Users/aryan/Projects/Major/data/images/{folder_label}",
+        OD_RAW_DATA_PATH / split,
+        PROCESSED_DATA_PATH / folder_label,
         "OD"
     )
 
