@@ -4,23 +4,23 @@ This project focuses on detecting retinal diseases from fundus images using deep
 It is designed to be **reproducible**, **cross-platform**, and **easy to set up** on
 Windows, Linux, and macOS.
 
-⚠️ **Important:** Datasets and trained models are **NOT included** in this repository.
+⚠️ IMPORTANT: Datasets and trained models are NOT included in this repository.
 
 ---
 
 ## 📁 Project Structure
 
 retinal-disease-detection/
-├── data/                 # datasets (NOT included)
+├── data/                # datasets (NOT included)
 │   └── README.md
-├── models/               # trained models (auto-created)
+├── models/              # trained models (auto-created)
 │   └── README.md
-├── results/                 # logs (auto-created)
+├── results/             # results / logs (auto-created)
 │   └── README.md
-├── src/                  # source code
+├── src/                 # source code
 │   └── utils/
-├── scripts/              # runnable scripts (will be added later)
-├── configs/              # configuration files
+├── scripts/             # runnable scripts
+├── configs/             # configuration files
 │   └── config.yaml
 ├── requirements.txt
 ├── .gitignore
@@ -29,8 +29,6 @@ retinal-disease-detection/
 ---
 
 ## 🔧 Prerequisites
-
-Make sure you have the following installed:
 
 - Python 3.10
 - Conda (recommended)
@@ -42,31 +40,31 @@ Make sure you have the following installed:
 
 ### 1️⃣ Clone the repository
 
-git clone <https://github.com/Aryan2079/retinal-disease-detection.git>  
-cd retinal-disease-detection
+$ git clone https://github.com/Aryan2079/retinal-disease-detection.git  
+$ cd retinal-disease-detection
 
 ---
 
 ### 2️⃣ Create and activate conda environment
 
-conda create -n retinal python=3.10 -y  
-conda activate retinal
+$ conda create -n retinal python=3.10 -y  
+$ conda activate retinal
 
 ---
 
 ### 3️⃣ Install dependencies
 
-pip install -r requirements.txt
+$ pip install -r requirements.txt
 
 ---
 
 ## 📦 Dataset Setup (MANDATORY)
 
-⚠️ **Datasets are NOT included in this repository.**
+⚠️ Datasets are NOT included in this repository.
 
-After cloning, the `data/` folder will already exist, but it will be empty.
+After cloning, the data/ folder will already exist, but it will be empty.
 
-### Required folder structure
+Required folder structure:
 
 data/
 ├── raw_data/
@@ -78,23 +76,28 @@ data/
 │   ├── Macular_Disease_Detection/
 │   ├── Ocular_Dataset/
 │   ├── Ocular_Disease_Detection/
-│   └── Retinal_Disease_Classification/
-│   └── Retinal_Fundus_Image/
-│   └── Retinal_Fundus_Image_50k/
+│   ├── Retinal_Disease_Classification/
+│   ├── Retinal_Fundus_Image/
+│   ├── Retinal_Fundus_Image_50k/
 │   └── Standarized_Glaucoma_Dataset/
-└── processed_data/
+├── processed_data/
 └── splits/
 
-- Run the scripts/create_data_structure.py script to make all the directories mentioned above.
-- Download the datasets from the links below and put them directly in folders inside data/raw_data.
-- Do NOT modify or rename dataset folders unless instructed
+Steps:
+- Run: $ python scripts/create_data_structure.py
+- Download datasets and place them directly inside their corresponding folders in data/raw_data/
+- Do NOT rename dataset folders
 - Do NOT push datasets to GitHub
 
 ---
 
 ## 📥 Dataset Download Links
 
-Download the datasets from the following sources and place them inside their respective folder indicated by "name". [Dataset Links](dataset_links.yaml)  
+All dataset download sources are listed in:
+
+dataset_links.yaml
+
+Place each dataset inside the folder matching its name.
 
 ---
 
@@ -117,23 +120,23 @@ This file controls:
 
 ## ▶️ Running the Project
 
-For now, only **setup and dataset placement** are required.
+For now, only setup and dataset placement are required.
 
-Preprocessing, training, and inference scripts will be added later and **must be run in order** when available.
+Preprocessing, training, and inference scripts will be added later and MUST be run in order.
 
 ---
 
 ## ❗ Important Rules (Read Carefully)
 
 - ❌ Do NOT push datasets or trained models to GitHub
-- ❌ Do NOT modify code inside `src/` unless assigned
+- ❌ Do NOT modify code inside src/ unless explicitly assigned
 - ❌ Do NOT run scripts out of order
-- ✅ Use GitHub branches and Pull Requests for changes
+- ✅ Use GitHub branches and Pull Requests
 - ✅ Follow this README exactly for reproducibility
 
 ---
 
-
 ## 📬 Contact
 
-If something breaks **after following the instructions exactly**, raise a GitHub issue or contact the repository owner(Aryan Bhattarai).
+If something breaks after following the instructions exactly,
+raise a GitHub issue or contact the repository owner: Aryan Bhattarai
