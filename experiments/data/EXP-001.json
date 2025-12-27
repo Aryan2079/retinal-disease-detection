@@ -1,0 +1,36 @@
+{
+  "experiment_id": "EXP-001",
+  "model": "MobileNetV2",
+  "type": "CNN",
+  "date": "2025-12-24",
+
+  "constraints": {
+    "hardware": "CPU",
+    "image_size": "224x224",
+    "epochs": 20,
+    "batch_size": 32,
+    "time_limit_hours": 2
+  },
+
+  "training": {
+    "optimizer": "Adam",
+    "learning_rate": 0.0001,
+    "loss": "Categorical Cross-Entropy",
+    "augmentation": ["Flip", "Rotation"]
+  },
+
+  "results": {
+    "train_accuracy": 0.91,
+    "val_accuracy": 0.845,
+    "test_accuracy": 0.839,
+    "f1_score": 0.82,
+    "training_time_minutes": 108
+  },
+
+  "observations": {
+    "strengths": ["Fast training", "Low memory usage"],
+    "limitations": ["Weak AMD vs Glaucoma separation"]
+  },
+
+  "decision": "Try EfficientNet for better feature extraction"
+}
