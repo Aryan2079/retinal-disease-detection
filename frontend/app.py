@@ -23,10 +23,10 @@ text-align:center;
 margin-top:20px;
 width:244px;
 height:244px;
-display:flex;            /* make it flex */
-justify-content:center;  /* horizontal center */
-align-items:center;      /* vertical center */
-margin:20px auto 0 auto; /* center box itself horizontally */
+display:flex;            
+justify-content:center;  
+align-items:center;      
+margin:20px auto 0 auto; 
 }
         
 .upload-box:hover {
@@ -98,17 +98,13 @@ if uploaded:
         with st.spinner("Analyzing retina..."):
             time.sleep(2)
 
-        result = "Cataract"   # fake for now
+        result = "Glaucoma"   # fake for now
 
         st.progress(100)
         st.markdown("### Detection Result")
 
-        col1,col2,col3,col4 = st.columns(4)
-        diseases = ["Cataract","Glaucoma","Diabetic Retinopathy","Normal"]
-
-        for col,d in zip([col1,col2,col3,col4], diseases):
-            with col:
-                if d == result:
-                    st.markdown(f"<div class='result-card detected-card'>{d}<br>Detected</div>", unsafe_allow_html=True)
-                else:
-                    st.markdown(f"<div class='result-card notdetected-card'>{d}<br>Not Detected</div>", unsafe_allow_html=True)
+        # Show only Glaucoma result
+        if result == "Glaucoma":
+            st.markdown(f"<div class='result-card detected-card'>Glaucoma<br>detected😔</div>", unsafe_allow_html=True)
+        else:
+            st.markdown(f"<div class='result-card notdetected-card'>Glaucoma<br>not detected🥳</div>", unsafe_allow_html=True)
