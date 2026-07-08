@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{experiment_id}}</title>
+  <style>
+    body { font-family: Arial; margin: 40px; }
+    h2 { border-bottom: 2px solid #333; }
+    table { border-collapse: collapse; width: 60%; }
+    td, th { border: 1px solid #aaa; padding: 8px; }
+  </style>
+</head>
+<body>
+
+<h1>Experiment {{experiment_id}}</h1>
+
+<h2>Model</h2>
+<p><b>Architecture:</b> {{model}}</p>
+<p><b>Type:</b> {{type}}</p>
+<p><b>Date:</b> {{date}}</p>
+
+<h2>Constraints</h2>
+<table>
+{% for k, v in constraints.items() %}
+<tr><td>{{k}}</td><td>{{v}}</td></tr>
+{% endfor %}
+</table>
+
+<h2>Training Configuration</h2>
+<table>
+{% for k, v in training.items() %}
+<tr><td>{{k}}</td><td>{{v}}</td></tr>
+{% endfor %}
+</table>
+
+<h2>Results</h2>
+<table>
+{% for k, v in results.items() %}
+<tr><td>{{k}}</td><td>{{v}}</td></tr>
+{% endfor %}
+</table>
+
+<h2>Observations</h2>
+<p><b>Strengths:</b> {{observations.strengths}}</p>
+<p><b>Limitations:</b> {{observations.limitations}}</p>
+
+<h2>Decision</h2>
+<p>{{decision}}</p>
+
+</body>
+</html>

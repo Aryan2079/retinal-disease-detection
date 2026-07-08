@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Model Comparison</title>
+  <style>
+    body { font-family: Arial; margin: 40px; }
+    table { border-collapse: collapse; width: 80%; }
+    td, th { border: 1px solid #aaa; padding: 8px; }
+  </style>
+</head>
+<body>
+
+<h1>Model Comparison</h1>
+
+<table>
+<tr>
+  <th>Metric</th>
+  <th>{{exp1.experiment_id}}</th>
+  <th>{{exp2.experiment_id}}</th>
+</tr>
+
+{% for key in metrics %}
+<tr>
+  <td>{{key}}</td>
+  <td>{{exp1.results[key]}}</td>
+  <td>{{exp2.results[key]}}</td>
+</tr>
+{% endfor %}
+</table>
+
+</body>
+</html>
